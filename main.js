@@ -9,15 +9,25 @@ server.connect( "ws://ecv-2025.doc.upf.edu/port/5500/ws", "CHATX_<room_name>");
 server.on_message = function( author_id, msg ){
     //data received server.addEventListener('message', (event) => {
   //const message = event.data;
-  displayMessage(message);
+  displayMessage(msg);
 
   }
 
+// send message on the click
 sendButton.addEventListener('click', () => {
   const message = messageInput.value;
-  server.sendMessage(message);
-  displayMessage(message, true);
-  messageInput.value = '';
+  if (message !== ''){
+    server.sendMessage(message);
+    displayMessage(message, true);
+    messageInput.value = '';
+  }
+});
+
+// send message on the enter key
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && messageInput.value !== '') {
+    sendButton.click();
+  }
 });
 
 
