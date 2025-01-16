@@ -1,8 +1,9 @@
- /* Chat bubble styling */
+ /* Chat styling */
  .chat-container {
   display: flex;
   flex-direction: column;
   height: 97vh;
+  /*background-color: #0a2541*/
 }
 
 .messages-container {
@@ -23,7 +24,18 @@
   max-width: 60%;
   word-wrap: break-word;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
 }
+
+.author-id {
+  font-size: 12px;
+  font-weight: bold;
+  color: #8309a5;
+  margin-top: 1px; 
+  margin-bottom: 3px;
+}
+
+
 
 .sender-message-container {
   justify-content: flex-end;
