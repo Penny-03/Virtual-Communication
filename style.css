@@ -41,27 +41,20 @@ body {
   z-index: 1; /* Layer it above the body background */
 }
 
-.building img, .building.fountain {
-  position: absolute;
-  z-index: 2; /* Ensures images like fountains appear above the building background */
-  min-height: 0;
-  
-}
-
 .building.fountain {
-  background-image: url('WaterFountain.png'); 
-  background-size: 128px 96px; 
-  background-position: 0 0;
-  animation: fountainAnimation 1s steps(2) infinite; /* 4 frame nell'animazione */
-}
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+overflow: visible; 
+position: relative;
 
-/* Animazione della fontana */
-@keyframes fountainAnimation {
-  from {background-position: 0 0;
-  }
-  to {
-    background-position: -128px 0; 
-  }
+}
+.building.fountain img {
+  width: 100%; /* Occupa tutto lo spazio del contenitore */
+  height: 100%;
+  object-fit: contain; /* Adatta la GIF senza distorcerla */
 }
 
 .avatar {
