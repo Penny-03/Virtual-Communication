@@ -1,15 +1,117 @@
+@font-face {
+  font-family: "Silkscreen";
+  src: url(fonts/silkscreen/slkscre.ttf);
+}
+
+
 body {
-  background-image: url('something.png'); /* Main background image */
-  background-size: cover;
-  background-position: center;
+  font-family: "Silkscreen";
+}
+
+ /*Login */
+ #loginScreen {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  margin: 0;
-  overflow: hidden;
+  background: url(img/cityscape.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+#loginScreen h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.label{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#loginForm input,
+#loginForm select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Silkscreen";
+}
+
+#loginForm input::placeholder,
+#loginForm select {
+  color: #666666; /* Colore del testo segnaposto */
+}
+#loginForm button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#loginForm button:hover {
+  background-color: #0056b3;
+}
+#loginForm select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "Silkscreen";
+  background-color: white;
+  cursor: pointer;
+  appearance: none; /* Removes the default arrow icon */
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5H7z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+#loginForm select:focus {
+  border-color: #007BFF;
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#loginForm select option {
+  color: #000; /* Colore delle opzioni selezionabili */
+}
+
+#loginForm select:valid {
+  color: #000; /* Colore scuro quando un’opzione valida è selezionata */
+}
+
+.pic-selection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+  }
+
+.pic img:hover {
+  transform: scale(1.1);
+}
+
 .city {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,6 +139,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 0;
   position: relative; /* Required for z-index to work */
   z-index: 1; /* Layer it above the body background */
 }
@@ -64,7 +167,7 @@ position: relative;
   left: 5%; /* Positioned between the first and fourth buildings */
   top: 50%;
   transform: translateY(-50%);
-  background-image: url('avatar.png'); /* Avatar sprite */
+  background-image: url('img/avatar.png'); /* Avatar sprite */
   background-size: 1024px 140px;
   background-position: 0 0;
   animation: idle 0.7s steps(4) infinite;

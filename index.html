@@ -7,12 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="road"></div>
-    <div class="city">
+  <div id="loginScreen" class="login-screen">
+    <h2>Welcome to the secret city!</h2>
+    <form id="loginForm">
+      <label class="label" for="age">Age:</label>
+      <input type="number" id="age" min="1" max="120" required placeholder="How old are you?">
+      
+      <label class="label" for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="" disabled selected>Select your gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Non-binary">Non-binary</option>
+          <option value="Prefer not to say">Prefer not to say</option>
+        </select>
+
+          <label class="label" for="pic">Avatar:</label>
+          <div id="picSelection" class="pic-selection">
+            <div class="pic" onclick="selectAvatar('img/avatar1.jpg', event)">
+              <img src="img/avatar1.jpg" alt="Avatar 1">
+            </div>
+            <div class="pic" onclick="selectAvatar('img/avatar2.jpg', event)">
+              <img src="img/avatar2.jpg" alt="Avatar 2">
+            </div>
+            <div class="pic" onclick="selectAvatar('img/avatar3.jpg', event)">
+              <img src="img/avatar3.jpg" alt="Avatar 3">
+            </div>
+            <div class="pic" onclick="selectAvatar('img/avatar4.jpg', event)">
+              <img src="img/avatar4.jpg" alt="Avatar 4">
+            </div>
+            <div class="pic" onclick="selectAvatar('img/avatar5.jpg', event)">
+              <img src="img/avatar5.jpg" alt="Avatar 5">
+            </div>
+            <div class="pic" onclick="selectAvatar('img/avatar6.jpg', event)">
+              <img src="img/avatar6.jpg" alt="Avatar 6">
+            </div>
+          </div>
+          <button type="submit">Join Chat</button>
+        </form>
+    </div>
+
+    <div class="city" id="city" style="display: none;">
         <div class="avatar" id="avatar"></div>
         <div class="building" data-link="page1.html"></div>
         <div class="building fountain" data-link="page2.html">
-            <img src="WaterFountain.gif" alt="Fontana animata">
+            <img src="img/WaterFountain.gif" alt="Fontana animata">
         </div>
         <div class="building" data-link="page3.html"></div>
         <div class="building" data-link="page4.html"></div>
