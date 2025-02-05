@@ -45,3 +45,26 @@ document.querySelectorAll('.building').forEach((building, index) => {
       }, 1000);
   });
 });
+
+
+function goToMainMenu() {
+  window.location.href = 'index.html';
+}
+
+function sendMessage() {
+  const secretInput = document.getElementById('secretInput');
+  const secretBox = document.getElementById('secretBox');
+  const secretText = secretInput.value.trim();
+
+  if (secretText !== '') {
+      const secretElement = document.createElement('div');
+      secretElement.classList.add('secret');
+      secretElement.innerHTML = `
+          <div class="message-header">Age: 25 | Gender: Non-binary</div>
+          <div>${secretText}</div>
+      `;
+      secretBox.appendChild(secretElement);
+      secretBox.scrollTop = secretBox.scrollHeight;
+      secretInput.value = '';
+  }
+}
