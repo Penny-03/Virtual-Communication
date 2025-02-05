@@ -112,15 +112,25 @@ body {
   transform: scale(1.1);
 }
 
+/* città */
 .city {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 15vh;
-  width: 80vw;
-  height: 80vh;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   background-color: transparent;
+}
+
+.city::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('tile1_scaled.png'); /* Tileset per la strada */
+  background-size: 100% auto; /* La mattonella si adatta in larghezza e si ripete in altezza */
+  background-repeat: repeat; 
 }
 .building {
   width: 100%;
